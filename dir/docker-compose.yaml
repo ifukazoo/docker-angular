@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    command: ng serve --host 0.0.0.0
+    volumes:
+      - ./:/home/node/app
+      - ./node_modules:/home/node/app/node_modules
+    ports:
+      - 4200:4200
+    # tty: true
+
+volumes:
+  node_modules:
+
