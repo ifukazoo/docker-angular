@@ -11,13 +11,13 @@
 1. angular cli環境を作成する
 
     ```shell
-    %docker-compose up
+    %docker compose up
     ```
 
-1. angular cli でアプリケーション作成
+1. angular cli でアプリケーション作成。コンテナ内でngコマンドとインタラクティブなやりとりが発生するとうまくいかないのでデフォルト値を指定。
 
     ```shell
-    %docker-compose run --rm app ng new my-app --directory .
+    %docker compose run --rm -T app ng new tutorial --directory . --defaults --skip-git
     ```
 
 ## 開発
@@ -25,19 +25,19 @@
 * アプリをビルドしてホストする
 
     ```shell
-    %docker-compose up 
+    %docker compose up
     ```
 
 * パッケージなどを追加でインストールする
 
     ```shell
-    %docker-compose run --rm app npm install @types/moment
+    %docker compose run --rm app npm install @types/moment
     ```
 
 * シェルを起動する
 
     ```shell
-    %docker-compose run --rm app /bin/bash
+    %docker compose run --rm app /bin/bash
     ```
 
 ## 補足
